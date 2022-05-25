@@ -1,0 +1,23 @@
+
+[
+      {
+          "user_id": 1,
+          "blog_id": 5,
+          "comment_text": "This is amazing!"
+      },
+      {
+        "user_id": 2,
+        "blog_id": 5,
+        "comment_text": "OMG AWESOME!"
+     },
+     {
+      "user_id": 3,
+      "blog_id": 5,
+      "comment_text": "I'm not so sure about this, but we will see how it goes!"
+     },
+     {
+    "user_id": 4,
+    "blog_id": 5,
+    "comment_text": "Well I guess this news is better than no News."
+     }
+  ]

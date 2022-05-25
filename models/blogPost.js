@@ -15,7 +15,7 @@ Blog.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        blog_post: {
+        post_content: {
             type: DataTypes.TEXT,
             allowNull: true
         },
