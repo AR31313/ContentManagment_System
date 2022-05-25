@@ -10,7 +10,7 @@
 
 2. Confirm that the MySQL server is turned on.
 
-3. Run `CREATE DATABASE dish_db;` to create a new database.
+3. Run `CREATE DATABASE posts_db;` to create a new database.
 
 4. Return to your console and run `node seeds/index.js` to seed the database.
 
