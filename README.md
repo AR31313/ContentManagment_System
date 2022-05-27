@@ -12,7 +12,7 @@
 
 3. Run `CREATE DATABASE posts_db;` to create a new database.
 
-4. Return to your console and run `node seeds/index.js` to seed the database.
+4. Return to your console and run `node seeds/seeds.js` to seed the database.
 
 5. Run `npm start`.
 
