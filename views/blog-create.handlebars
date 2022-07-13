@@ -1,12 +1,23 @@
-<section class="container">
-  <h3 class="gallery-name">{{gallery.name}}</h3>
-  <!-- Without the custom helper, the entire timestamp is printed -->
-  <h4>Opening Hour: {{gallery.starting_date}}</h4>
-  <!-- Using a custom helper 'format_time', the time has been formatted -->
-  <h4>Closing Hour: {{format_time gallery.ending_date}}</h4>
-  <section class="flex-row justify-center">
-    {{#each gallery.paintings as |painting|}}
-    {{> painting-details}}
-    {{/each}}
-  </section>
-</section>
+<div class="notification mt-4 mb-0 is-primary has-text-weight-bold is-size-5 py-2">New Post</div>
+<div class="field">
+  <p class="control has-icons-left has-icons-right">
+    <input class="input" type="text" placeholder="Post Title" id="newPostTitle">
+    <span class="icon is-small is-left">
+      <i class="fas fa-heading"></i>
+    </span>
+  </p>
+</div>
+<div class="field">
+  <div class="control">
+    <textarea class="textarea" placeholder="Post Body" rows="8" id="newPostBody"></textarea>
+  </div>
+</div>
+<div class="field">
+  <p class="control">
+    <button class="button is-success" id="createPostSubmit">
+      Create Post
+    </button>
+  </p>
+</div>
+
+<script src="/js/newBlog.js"></script>

@@ -2,29 +2,7 @@ const router = require('express').Router();
 const { Blog } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-//GET all Blog Posts
-router.get('/', (req, res) => {
-  Blog.findAll({})
-    .then(dbBlogData => res.json(dbBlogData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
 
-//GET One Blog Post
-router.get('/:id', (req, res) => {
-  Blog.findAll({
-    where: {
-      id: req.params.id
-    }
-  })
-    .then(dbBlogData => res.json(dbBlogData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    })
-});
 
 //Create a new Blog Post
 router.post('/', withAuth, async (req, res) => {
@@ -34,7 +12,7 @@ router.post('/', withAuth, async (req, res) => {
       user_id: req.session.user_id,
     });
 
-    res.status(200).json(newBlog);
+    res.status(200).json({ post: newBlog, message: 'post created!' });
   } catch (err) {
     res.status(400).json(err);
   }
@@ -59,7 +37,29 @@ router.put('/:id', withAuth, (req, res) => {
     res.status(500).json(err);
   });
 });
+//GET all Blog Posts
+router.get('/', (req, res) => {
+  Blog.findAll({})
+    .then(dbBlogData => res.json(dbBlogData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
+//GET One Blog Post
+router.get('/:id', (req, res) => {
+  Blog.findAll({
+    where: {
+      id: req.params.id
+    }
+  })
+    .then(dbBlogData => res.json(dbBlogData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    })
+});
 //Delete a Blog Post
 router.delete('/:id', withAuth, async (req, res) => {
   try {

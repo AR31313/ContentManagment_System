@@ -1,22 +1,22 @@
-{{#each dbBlogData}}
-{{log blog}}
+{{log dbBlogData}}
+{{#each blogs}}
 <!-- Blog entry -->
 <div class="w3-container w3-white w3-margin w3-padding-large">
     <div class="w3-center">
-        <h3>{{this.title}}</h3>
-        <h5>Post by {{this.name}} </h5>
+        <h3><strong>{{this.title}}</strong></h3>
+        <h5>Post by {{this.user_id}} </h5>
         <span class="w3-opacity">May 2, 2016</span>
     </div>
 
     <div class="w3-justify">
-        <img src="http://placehold.jp/a5d9bc/ffffff/500x260.png?text=ARTICLE" alt="PLACEHOLDER IMG" style="width:100%"
+        <img src="http://placehold.jp/a5d9bc/ffffff/400x160.png?text=ARTICLE" alt="PLACEHOLDER IMG" style="width:100%"
             class="w3-padding-16">
-        <p><strong>More Hats!</strong> I am {{this.name}}.</p>
+        <p> {{this.post_content}}</p>
         <!-- LIKE BTN -->
         <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i
                         class="fa fa-thumbs-up"></i> Like</b></button></p>
         <!-- Comment Card -->
-        {{>blog-comments items=item}}
+        {{>blog-comments item}}
     </div>
 
     <!-- END BLOG ENTRIES -->

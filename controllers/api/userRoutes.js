@@ -1,18 +1,20 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-// Create/POST a New User
+//SIGN-UP
+// create a new user
 router.post('/', async (req, res) => {
   try {
+    console.log(req.body);
     const userData = await User.create(req.body);
+    req.session.user_id = userData.id;
+    req.session.logged_in = true;
 
     req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-
       res.status(200).json(userData);
     });
   } catch (err) {
+    console.log('error', err);
     res.status(400).json(err);
   }
 });
@@ -54,14 +56,12 @@ router.post('/login', async (req, res) => {
 });
 
 //LOGOUT
-router.post('/logout', (req, res) => {
+// log out current user, destroy the session
+router.get('/logout', (req, res) => {
   if (req.session.logged_in) {
-    // Remove the session variables
     req.session.destroy(() => {
-      res.status(204).end();
+      res.redirect('/');
     });
-  } else {
-    res.status(404).end();
   }
 });
 
@@ -69,24 +69,5 @@ router.post('/logout', (req, res) => {
 // Edit/PUT User info
 // Delete/DESTROY User 
 
-// module.exports = router;
-// router.get('/', (req, res) => {
-//   // If a session exists, redirect the request to the homepage
-//   if (req.session.logged_in) {
-//     Blog.findAll({})
-//       .then(dbBlogData => {
-//         console.log(dbBlogData);
 
-//       })
-//       .catch(err => {
-//         console.log(err);
-//         res.status(500).json(err);
-//       })
-
-
-//     // res.render("homepage",)
-//     return;
-//   }
-//   // let them still view homepage even if not logged in
-//   res.render("acct-login", { item })
-// });
+module.exports = router;

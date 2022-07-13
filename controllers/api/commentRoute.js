@@ -2,29 +2,6 @@ const router = require('express').Router();
 const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-//Get Comments
-router.get('/', (req, res) => {
-    Comment.findAll({})
-        .then(dbCommentData => res.json(dbCommentData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
-
-//GET one Comment
-router.get('/:id', (req, res) => {
-    Comment.findAll({
-        where: {
-            id: req.params.id
-        }
-    })
-        .then(dbCommentData => res.json(dbCommentData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        })
-});
 
 //Create a comment
 router.post('/', withAuth, (req, res) => {
@@ -82,6 +59,29 @@ router.delete('/:id', withAuth, (req, res) => {
             console.log(err);
             res.status(500).json(err);
         });
+});
+//Get Comments
+router.get('/', (req, res) => {
+    Comment.findAll({})
+        .then(dbCommentData => res.json(dbCommentData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+//GET one Comment
+router.get('/:id', (req, res) => {
+    Comment.findAll({
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(dbCommentData => res.json(dbCommentData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        })
 });
 
 module.exports = router;
