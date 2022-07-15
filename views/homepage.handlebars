@@ -16,9 +16,10 @@
         <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i
                         class="fa fa-thumbs-up"></i> Like</b></button></p>
         <!-- Comment Card -->
-        {{>blog-comments item}}
-    </div>
+        <h1>hello</h1>
 
+        {{>blog-comments comment=this.comment}}
+    </div>
     <!-- END BLOG ENTRIES -->
 </div>
 {{/each}}

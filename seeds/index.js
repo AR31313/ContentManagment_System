@@ -27,7 +27,7 @@ const seedDatabase = async () => {
 
   console.log('\n----- POST Added! -----\n');
 
-  await commentData();
+  // await commentData();
   console.log('\n----- COMMENT Added! -----\n');
 
   process.exit(0);
