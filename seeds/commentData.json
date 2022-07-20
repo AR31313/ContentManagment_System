@@ -1,13 +1,12 @@
-
 [
      {
     "user_id": 1,
-     "blog_id": 5,
+     "blog_id": 2,
      "comment_text": "This is amazing!"
     },
     {
      "user_id": 2,
-     "blog_id": 5,
+     "blog_id": 1,
      "comment_text": "OMG AWESOME!"
      },
      {
@@ -17,7 +16,7 @@
      },
      {
     "user_id": 4,
-    "blog_id": 5,
+    "blog_id": 3,
     "comment_text": "Well I guess this news is better than no News."
      }
 ]
