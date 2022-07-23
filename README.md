@@ -2,8 +2,6 @@
 
 ## CMS-style blog site to publish articles &amp; deployed to Heroku.
 
----
-
 ## Task
 
 To build a Content Managementstyle blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well.
