@@ -1,18 +1,22 @@
 {{log comment}}
 {{#each comment}}
 <!-- Comment Card -->
-{{!-- <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo1')" id="myBtn"><b>Replies  </b>
-        <span class="w3-tag w3-white">1</span></button></p>
-<p class="w3-clear"></p>
-<div class="w3-row w3-margin-bottom" id="demo1" style="display:none">
-    <hr>
-    <div class="w3-col l2 m3">
-        <img src="http://placehold.jp/a5d9bc/ffffff/100x60.png?text=USER" style="width:90px;">
-    </div> --}}
-    <div class="w3-col l10 m9">
-        </br>
-        <span class="w3-opacity w3-medium">Posted by:{{this.user_id}}</span>
-        <p>{{this.comment_text}}</p>
-    </div>
 
-    {{/each}}
+<form class="commentForm">
+    <textarea type="text" rows="4" cols="50" id="comment" placeholder="Whats your thoughts on this Article?"></textarea>
+    </br>
+    <button type="button" class="confirmComment" data-id="{{this.id}}">Post
+        comment</button>
+    </br>
+    <button id="cancelComment" type="reset">Cancel</button>
+</form>
+
+<div class="w3-col l10 m9">
+    </br>
+    <span class="w3-opacity w3-medium">Posted by:{{this.user_id}}</span>
+    <p>{{this.comment_text}}</p>
+</div>
+
+{{/each}}
+
+<script src="./js/comment.js"></script>
