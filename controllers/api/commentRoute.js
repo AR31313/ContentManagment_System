@@ -3,7 +3,15 @@ const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
-//Create a comment
+router.get('/', (req, res) => {
+    Comment.findAll({})
+        .then(dbCommentData => res.json(dbCommentData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
 router.post('/', withAuth, (req, res) => {
     // check the session
     if (req.session) {
@@ -20,7 +28,6 @@ router.post('/', withAuth, (req, res) => {
             });
     }
 });
-
 //Edit a Comment
 router.put('/:id', withAuth, (req, res) => {
     Comment.update({
