@@ -37,7 +37,7 @@ To build a Content Managementstyle blog site similar to a Wordpress site, where 
 Users are prompted to either sign up or sign in
 They can create a username and password, their user credentials are saved and are logged into the site.
 Users are presented with the post title, contents, post creator’s username, and date created for that post and have the option to read comments.
-The [express-session](https://www.npmjs.com/package/express-session) package stores the session data on the client in a cookie. When Users are idle on the site for more than a 3 hours, the cookie will expire and Users will be required to log in again to start a new session.
+When Users are idle on the site for more than a 3 hours, the cookie will expire and Users will be required to log in again to start a new session.
 ```
 
 ---
@@ -47,9 +47,9 @@ The [express-session](https://www.npmjs.com/package/express-session) package sto
 - [MySQL2](https://www.npmjs.com/package/mysql2)
 - [Express-handlebars](https://www.npmjs.com/package/express-handlebars) package to implement Handlebars.js for the Views.
 - [Sequelize](https://www.npmjs.com/package/sequelize) packages to connect to a MySQL database for the Models, and create an Express.js API for the Controllers.
-- [Dotenv package](https://www.npmjs.com/package/dotenv) to use environment variables,
-- [Bcrypt package](https://www.npmjs.com/package/bcrypt) to hash passwords,
-- [Express-session](https://www.npmjs.com/package/express-session)
+- [Dotenv package](https://www.npmjs.com/package/dotenv) to use environment variables.
+- [Bcrypt package](https://www.npmjs.com/package/bcrypt) to hash passwords.
+- [Express-session](https://www.npmjs.com/package/express-session) to store the session data on the client in a cookie. 
 - [Connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize) packages to add authentication.
 
 ---
