@@ -27,7 +27,7 @@ async function commentFormHandler(event) {
     }
 }
 
-document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
+document.querySelector('.confirmComment').addEventListener('submit', commentFormHandler);
 
 // cmtbutton.forEach((button) => {
 //   button.addEventListener("click", confirmComment);
