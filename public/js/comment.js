@@ -1,33 +1,34 @@
-async function commentFormHandler(event) {
+const submitcomment = document.querySelectorAll(".confirmComment");
+
+const confirmComment = async (event) => {
     event.preventDefault();
+    console.log(event.target)
 
-    const comment_text = document.querySelector('textarea[name="comment-body"]').value.trim();
-
-    const post_id = window.location.toString().split('/')[
-        window.location.toString().split('/').length - 1
-    ];
+    const comment_text = document.querySelector('#comment').value.trim();
+    const user_id = event.target.getAttribute('data-id');
+    console.log(comment);
 
     if (comment_text) {
-        const response = await fetch('/api/comments', {
+        const response = await fetch('/api/comment', {
             method: 'POST',
-            body: JSON.stringify({
-                post_id,
-                comment_text
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
+            body: JSON.stringify({ comment_text, user_id }),
+            headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
+            //reload the page on success - to see the comment post
             document.location.reload();
         } else {
             alert(response.statusText);
         }
     }
-}
+};
 
-document.querySelector('.confirmComment').addEventListener('submit', commentFormHandler);
+
+
+document
+    .querySelector('.confirmComment')
+    .addEventListener('click', confirmComment);
 
 // cmtbutton.forEach((button) => {
 //   button.addEventListener("click", confirmComment);

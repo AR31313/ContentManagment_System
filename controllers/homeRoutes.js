@@ -12,6 +12,7 @@ router.get('/login', (req, res) => {
   // let them still view homepage even if not logged in
   res.render("acct-login")
 });
+
 router.get("/signup", (req, res) => {
   // If the user already has an account send them to the home page
   if (req.user) {

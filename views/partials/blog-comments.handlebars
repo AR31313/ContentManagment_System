@@ -3,19 +3,23 @@
 <!-- Comment Card -->
 
 <form class="commentForm">
-    <textarea type="text" rows="4" cols="50" id="comment" placeholder="Whats your thoughts on this Article?"></textarea>
+    <textarea type="text" rows="4" cols="50" id="comment"
+        placeholder="Write a comment to check availability."></textarea>
     </br>
     <button type="button" class="confirmComment" data-id="{{this.id}}">Post
         comment</button>
     </br>
     <button id="cancelComment" type="reset">Cancel</button>
 </form>
-
+{{#if this.comment}}
 <div class="w3-col l10 m9">
     </br>
     <span class="w3-opacity w3-medium">Posted by:{{this.user_id}}</span>
     <p>{{this.comment_text}}</p>
 </div>
-
+{{/if}}
 
 {{/each}}
+
+
+<script type="text/javascript" src="/js/comment.js"></script>
