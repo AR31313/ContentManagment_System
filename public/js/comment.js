@@ -1,4 +1,4 @@
-const submitcomment = document.querySelectorAll(".confirmComment");
+// const submitcomment = document.querySelectorAll(".confirmComment");
 
 const confirmComment = async (event) => {
     event.preventDefault();
